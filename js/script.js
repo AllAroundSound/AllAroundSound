@@ -1,6 +1,8 @@
 import { wix, imgUrl } from './wix.js';
 
 // ---------- HELPERS ----------
+// Turns plain text OR Wix rich-text HTML (e.g. <p class="font_8">...</p>)
+// into a list of clean paragraphs.
 function toParagraphs(value) {
   if (!value) return [];
   value = String(value);
@@ -15,6 +17,7 @@ function toParagraphs(value) {
   return parts.map(t => t.replace(/\u00a0/g, ' ').trim()).filter(Boolean);
 }
 
+// One clean line of text (used for names, roles, quotes)
 const plain = value => toParagraphs(value).join(' ');
 
 // ---------- SERVICES TABS ----------
@@ -66,7 +69,7 @@ if (quoteText && quoteName && quoteCount && quotePrev && quoteNext) {
 }
 
 async function loadTestimonials() {
-  if (!quoteText) return; 
+  if (!quoteText) return; // not the page with the carousel
   try {
     const { items: rows } = await wix.items.query('Testimonials')
       .eq('visible', true).ascending('order').limit(100).find();
@@ -133,7 +136,7 @@ async function loadTeam() {
   try {
     const { items: rows } = await wix.items.query('Team')
       .eq('visible', true).ascending('order').limit(50).find();
-    if (!rows.length) return;               
+    if (!rows.length) return;               // keep the hardcoded cards as a fallback
     teamGrid.replaceChildren(...rows.map(buildTeamCard));
   } catch (err) {
     console.error('Could not load team:', err);
@@ -254,6 +257,7 @@ reviewForm?.addEventListener('input', clearReviewError);
 reviewForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  // trim first so a name or review of only spaces doesn't count
   const name = reviewName.value.trim();
   const review = reviewText.value.trim();
 
@@ -400,7 +404,7 @@ if (answerBox && records.length) {
 
 
   /* =========================================
-     CLICK RECORD -> SHOW ANSWER
+     CLICK RECORD → SHOW ANSWER
   ========================================= */
 
   records.forEach((record) => {
