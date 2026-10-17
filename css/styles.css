@@ -230,7 +230,7 @@ main>section{padding:150px 7vw 100px}
 
 /* ---------- TEAM ---------- */
 .team{background:#fff}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .team-card{padding:26px}
 .team-photo{
   width:100%;aspect-ratio:1;border-radius:180px;margin-bottom:18px;
@@ -909,6 +909,28 @@ main>section{padding:150px 7vw 100px}
   text-transform: uppercase;
 
   color: #8faab3;
+}
+
+.contact-form label.review-consent {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #c1d2d8;
+  cursor: pointer;
+}
+
+.contact-form .review-consent input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  padding: 0;
+  margin-top: 1px;
+  accent-color: var(--sky);
+  cursor: pointer;
 }
 
 .form-row {
