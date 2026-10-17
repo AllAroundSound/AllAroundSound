@@ -3,7 +3,7 @@ import { items } from '@wix/data';
 
 export const wix = createClient({
   modules: { items },
-  auth: OAuthStrategy({ clientId: '47688e4c-0fcd-4463-94b5-41aad72bc9e3' })
+  auth: OAuthStrategy({ clientId: '91c36def-03bc-4686-8b28-4951161d8e33' })
 });
 
 // Turns a Wix image value (wix:image://...) into a normal URL
