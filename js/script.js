@@ -86,48 +86,33 @@ loadTestimonials();
 // ---------- TEAM (from Wix CMS) ----------
 const teamGrid = document.querySelector('.team-grid');
 
-// ---- TEAM FIELD IDs ----
-// Put the Field ID of each column in your Wix "Team" collection here.
-// (In the CMS: click the column, the Field ID is shown in its settings.)
-// If you can't change an ID, just type the one you have on the right side.
-const TEAM_COLLECTION = 'Team';   // the Collection ID, not necessarily the display name
-const TEAM_FIELDS = {
-  name:     'title',      // the default "Title" column has the ID "title" and can't be renamed
-  role:     'role',
-  bioShort: 'bioShort',
-  bioMore:  'bioMore',
-  photo:    'photo',
-  order:    'order',
-  visible:  'visible',
-};
-
 function buildTeamCard(m) {
   const card = document.createElement('div');
   card.className = 'team-card glass-panel';
 
-  if (m[TEAM_FIELDS.photo]) {
+  if (m.photo) {
     const img = document.createElement('img');
     img.className = 'team-photo';
-    img.src = imgUrl(m[TEAM_FIELDS.photo], 600, 600);
-    img.alt = plain(m[TEAM_FIELDS.name]);
+    img.src = imgUrl(m.photo, 600, 600);
+    img.alt = plain(m.name);
     img.loading = 'lazy';
     img.decoding = 'async';
     card.append(img);
   }
 
   const h3 = document.createElement('h3');
-  h3.textContent = plain(m[TEAM_FIELDS.name]);
+  h3.textContent = plain(m.name);
   const role = document.createElement('span');
   role.className = 'team-role';
-  role.textContent = plain(m[TEAM_FIELDS.role]);
+  role.textContent = plain(m.role);
 
   const bio = document.createElement('div');
   bio.className = 'team-bio';
   const p = document.createElement('p');
-  p.textContent = plain(m[TEAM_FIELDS.bioShort]);
+  p.textContent = plain(m.bioShort);
   bio.append(p);
 
-  const more = toParagraphs(m[TEAM_FIELDS.bioMore]);
+  const more = toParagraphs(m.bioMore);
   if (more.length) {
     const details = document.createElement('details');
     details.className = 'team-bio-more';
@@ -149,9 +134,8 @@ function buildTeamCard(m) {
 async function loadTeam() {
   if (!teamGrid) return;
   try {
-    const { items: rows } = await wix.items.query(TEAM_COLLECTION)
-      .eq(TEAM_FIELDS.visible, true).ascending(TEAM_FIELDS.order).limit(50).find();
-    console.log('Team rows from Wix:', rows.length, rows[0] ? Object.keys(rows[0]) : '(none)');
+    const { items: rows } = await wix.items.query('Team')
+      .eq('visible', true).ascending('order').limit(50).find();
     if (!rows.length) return;               // keep the hardcoded cards as a fallback
     teamGrid.replaceChildren(...rows.map(buildTeamCard));
   } catch (err) {
