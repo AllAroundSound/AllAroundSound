@@ -2759,14 +2759,16 @@ main>section{padding:150px 7vw 100px}
 
 .review{
   position:relative;
-  padding:10px 7vw 140px;
+  padding:120px 7vw;
+  border-top:1px solid var(--line);
+  background:linear-gradient(180deg,#fff,var(--paper));
 }
 .review-shell{
-  width:min(720px,100%);
+  width:min(780px,100%);
   margin:0 auto;
 }
 .review-intro{
-  text-align:center;
+  max-width:640px;
   margin-bottom:38px;
 }
 .review-eyebrow{
@@ -2776,14 +2778,14 @@ main>section{padding:150px 7vw 100px}
   color:#5f7881;
 }
 .review-intro h2{
-  margin:14px 0 14px;
-  font-size:clamp(30px,5vw,52px);
+  margin:14px 0;
+  font-size:clamp(34px,4.2vw,52px);
   font-weight:800;
-  letter-spacing:-.045em;
+  letter-spacing:-.03em;
   line-height:1.02;
 }
 .review-intro p{
-  margin:0 auto;
+  margin:0;
   max-width:460px;
   color:var(--steel);
   line-height:1.6;
@@ -2819,5 +2821,5 @@ main>section{padding:150px 7vw 100px}
 }
 
 @media (max-width:560px){
-  .review{padding:0 6vw 100px}
+  .review{padding:90px 6vw 76px}
 }
