@@ -1,6 +1,6 @@
 import { wix, imgUrl } from './wix.js';
 
-// ---------- GALLERY: DOMINO CROSSFADE ----------
+// GALLERY: DOMINO CROSSFADE 
 
 const PERIOD  = 5500; // how often each tile changes
 const STAGGER = 1000; // delay between one tile and the next
@@ -9,7 +9,7 @@ const FADE_MS = 900;  // must match the opacity transition
 // Order the dominoes fall
 const ORDER = [0, 1, 2, 3, 4, 5];
 
-// EXTRA photos for each tile (fallback if Wix can't be reached)
+// fallback photos
 let MORE_PHOTOS = [
   // 0: Wedding
   [
@@ -44,7 +44,7 @@ async function initGallery() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!tiles.length) return;
 
-  // ---- Pull photos from the Wix "Gallery" collection ----
+  // Pull photos from Wix
   // tile: 0 = Wedding, 1 = Photo Booth, 2 = Mitzvah, 3 = Corporate, 4 = School, 5 = Party
   try {
     const { items: rows } = await wix.items.query('Gallery')
@@ -55,14 +55,12 @@ async function initGallery() {
         rows.filter(r => Number(r.tile) === i && r.image).map(r => imgUrl(r.image, 1200, 900))
       );
 
-      // first photo of each tile replaces the one in the HTML
       tiles.forEach((tile, i) => {
         if (byTile[i].length) {
           tile.querySelector('.gallery-image').src = byTile[i][0];
         }
       });
 
-      // remaining photos feed the crossfade rotation
       MORE_PHOTOS = byTile.map(list => list.slice(1));
     }
   } catch (err) {
@@ -111,8 +109,8 @@ async function initGallery() {
       incoming.src = s.photos[next];
       old.after(incoming);
 
-      incoming.getBoundingClientRect();           // commit the starting (invisible) state
-      incoming.classList.remove('is-entering');   // fade in over the old photo
+      incoming.getBoundingClientRect();           
+      incoming.classList.remove('is-entering');  
 
       setTimeout(() => {
         s.tile.querySelectorAll('.gallery-image').forEach(img => {
@@ -126,12 +124,10 @@ async function initGallery() {
     s.busy = false;
   }
 
-  // start each tile in domino order, then keep each on its own repeating timer
   ORDER.forEach((tileNumber, position) => {
     const s = state[tileNumber];
     if (!s) return;
     setTimeout(() => {
-      // first change after PERIOD, so the page opens on the original photos
       setInterval(() => advance(s), PERIOD);
     }, position * STAGGER);
   });
