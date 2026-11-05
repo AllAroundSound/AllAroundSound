@@ -70,7 +70,7 @@ p{margin:0}
   mask-image:radial-gradient(circle at 30% 40%,#000 0%,#000 18%,transparent 68%);
 }
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 .site-head{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
@@ -93,7 +93,7 @@ p{margin:0}
 }
 .nav-toggle{display:none;border:0;background:none;font-size:20px}
 
-/* ---------- SECTION SCAFFOLD ---------- */
+/* SECTION SCAFFOLD */
 main>section{padding:150px 7vw 100px}
 .section-head{max-width:640px;margin-bottom:56px}
 .section-head h2{font-size:clamp(34px,4.2vw,52px);font-weight:800}
@@ -101,7 +101,7 @@ main>section{padding:150px 7vw 100px}
 .section-head-dark h2{color:#fff}
 .section-head-dark p{color:#9fb3ba}
 
-/* ---------- BUILD ---------- */
+/* BUILD */
 .build{
   position:relative;
   background:
@@ -426,7 +426,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Red */
+/* Light1 */
 
 .social-red {
   background:
@@ -450,7 +450,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Green */
+/* Light2 */
 
 .social-green {
   background:
@@ -474,7 +474,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Blue */
+/* Light3 */
 
 .social-blue {
   width: 4.25em;
@@ -501,7 +501,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Yellow */
+/* Light4 */
 
 .social-yellow {
   background:
@@ -705,7 +705,7 @@ main>section{padding:150px 7vw 100px}
 
 
 
-/* ---------- RESPONSIVE ---------- */
+/* RESPONSIVE */
 @media(max-width:960px){
   .site-head{
     display:grid;
@@ -872,9 +872,6 @@ main>section{padding:150px 7vw 100px}
   outline: none;
 }
 
-
-/* Remove default browser arrow */
-
 .faq-question::-webkit-details-marker {
   display: none;
 }
@@ -912,7 +909,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Subtle glass distortion / shine */
+/*  glass distortion / shine */
 
 .faq-frame::after {
   content: "";
@@ -1191,9 +1188,6 @@ main>section{padding:150px 7vw 100px}
   outline-offset: 3px;
 }
 
-
-/* FALLBACK IF BACKDROP FILTER ISN'T AVAILABLE */
-
 @supports not (
   backdrop-filter: blur(1px)
 ) {
@@ -1286,7 +1280,7 @@ main>section{padding:150px 7vw 100px}
   position: relative;
   box-sizing: content-box;
 
-  --step: 90deg; /* 360 / number of event types */
+  --step: 90deg; 
 
   width: 60px;
   height: 60px;
