@@ -70,7 +70,7 @@ p{margin:0}
   mask-image:radial-gradient(circle at 30% 40%,#000 0%,#000 18%,transparent 68%);
 }
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 .site-head{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;align-items:center;justify-content:space-between;
@@ -93,7 +93,7 @@ p{margin:0}
 }
 .nav-toggle{display:none;border:0;background:none;font-size:20px}
 
-/* ---------- SECTION SCAFFOLD ---------- */
+/* SECTION SCAFFOLD */
 main>section{padding:150px 7vw 100px}
 .section-head{max-width:640px;margin-bottom:56px}
 .section-head h2{font-size:clamp(34px,4.2vw,52px);font-weight:800}
@@ -101,7 +101,7 @@ main>section{padding:150px 7vw 100px}
 .section-head-dark h2{color:#fff}
 .section-head-dark p{color:#9fb3ba}
 
-/* ---------- HERO ---------- */
+/* HERO */
 .hero{
   position:relative;
   min-height:100vh;padding-top:170px;
@@ -144,7 +144,7 @@ main>section{padding:150px 7vw 100px}
 .deck-arm{position:absolute;width:95px;height:5px;right:4px;top:180px;background:#c9d1d3;border-radius:9px;transform:rotate(30deg);transform-origin:right}
 .deck-label{position:absolute;bottom:20px;color:#8f9ba0;font:9px "Space Mono",monospace;letter-spacing:.15em}
 
-/* ---------- ABOUT ---------- */
+/* ABOUT */
 .about{position:relative;background:#fff}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:8vw;align-items:center}
 .about-media{position:relative;aspect-ratio:1;overflow:hidden;border-radius:var(--radius)}
@@ -152,7 +152,7 @@ main>section{padding:150px 7vw 100px}
 .about-copy h2{font-size:clamp(30px,3.6vw,44px);font-weight:800;max-width:480px}
 .about-copy p{margin-top:20px;color:var(--steel);font-size:15px;line-height:1.65;max-width:520px}
 
-/* ---------- SERVICES ---------- */
+/* SERVICES */
 .services{position:relative;background:var(--mist)}
 .service-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .service-tab{
@@ -166,7 +166,7 @@ main>section{padding:150px 7vw 100px}
 .service-panel h3{margin-top:10px;font-size:26px;font-weight:800}
 .service-panel p{margin-top:16px;color:var(--steel);font-size:14.5px;line-height:1.65}
 
-/* ---------- BUILD ---------- */
+/* BUILD */
 .build{
   position:relative;
   background:
@@ -194,7 +194,7 @@ main>section{padding:150px 7vw 100px}
 #readout-type{display:block;margin-top:4px;font-size:20px;font-weight:800}
 .readout-total strong{display:block;margin-top:4px;font-size:30px;font-weight:800}
 
-/* ---------- GALLERY ---------- */
+/* GALLERY */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .gallery-tile{
   min-height:220px;display:flex;align-items:flex-end;padding:20px;
@@ -228,7 +228,7 @@ main>section{padding:150px 7vw 100px}
   color:#fff;text-shadow:0 1px 4px #0009;
 }
 
-/* ---------- TEAM ---------- */
+/* TEAM */
 .team{background:#fff}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .team-card{padding:26px}
@@ -247,7 +247,7 @@ main>section{padding:150px 7vw 100px}
 .team-bio-more summary:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
 .team-bio-more>div p{margin-top:10px}
 
-/* ---------- HALL OF FAME ---------- */
+/* HALL OF FAME */
 .hall, .hall2{
   position:relative;
   background:
@@ -277,7 +277,7 @@ main>section{padding:150px 7vw 100px}
 .jersey-num{font-size:44px;font-weight:800;color:#fff}
 .jersey-name{font-family:"Space Mono",monospace;font-size:11px;color:var(--sky)}
 
-/* ---------- HALL OF FAME FOUNDERS ---------- */
+/* HALL OF FAME FOUNDERS */
 
 .hall-founders {
   width: min(900px, 90%);
@@ -285,7 +285,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- FOUNDERS HEADER ---------- */
+/* FOUNDERS HEADER */
 
 .hall-founders-head {
   padding-top: 28px;
@@ -316,7 +316,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- PERSON ---------- */
+/* PERSON */
 
 .hall-person {
   display: grid;
@@ -331,7 +331,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ALT LAYOUT ---------- */
+/* ALT LAYOUT */
 
 .hall-person:nth-child(3) {
   direction: rtl;
@@ -342,7 +342,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- PHOTO FRAME ---------- */
+/* PHOTO FRAME */
 
 .hall-person-frame {
   padding: 10px;
@@ -367,7 +367,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- PHOTO ---------- */
+/* PHOTO */
 
 .hall-person-photo {
   width: 100%;
@@ -400,7 +400,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- PHOTO CAPTION ---------- */
+/* PHOTO CAPTION */
 
 .hall-person-caption {
   display: block;
@@ -419,7 +419,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- PERSON COPY ---------- */
+/* PERSON COPY */
 
 .hall-person-copy {
   display: grid;
@@ -435,7 +435,7 @@ main>section{padding:150px 7vw 100px}
   grid-template-columns: 45px 1fr;
 }
 
-/* ---------- ROLE ---------- */
+/* ROLE */
 
 .hall-person-role {
   display: block;
@@ -452,7 +452,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- NAME ---------- */
+/* NAME */
 
 .hall-person-copy h3 {
   margin: 0 0 18px;
@@ -469,7 +469,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- DESCRIPTION ---------- */
+/* DESCRIPTION */
 
 .hall-person-copy p {
   margin: 0;
@@ -484,7 +484,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- DIVIDER ---------- */
+/* DIVIDER */
 
 .hall-person + .hall-person {
   padding-top: 80px;
@@ -493,7 +493,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -555,7 +555,7 @@ main>section{padding:150px 7vw 100px}
 
 }
 
-/* ---------- TESTIMONIALS ---------- */
+/* TESTIMONIALS */
 .testimonials{background:var(--mist)}
 .quote-rig{max-width:780px;margin:0 auto;padding:52px;text-align:center}
 .quote-rig blockquote{margin:0;font-size:clamp(19px,2.2vw,25px);line-height:1.5;font-weight:500}
@@ -565,7 +565,7 @@ main>section{padding:150px 7vw 100px}
 #quote-count{font-family:"Space Mono",monospace;font-size:11px;color:var(--steel)}
 
 
-/* ---------- CONTACT ---------- */
+/* CONTACT */
 
 .contact {
   position: relative;
@@ -592,7 +592,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CONTACT LAYOUT ---------- */
+/* CONTACT LAYOUT */
 
 .contact-shell {
   position: relative;
@@ -609,7 +609,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- LEFT SIDE ---------- */
+/* LEFT SIDE */
 
 .contact-intro {
   max-width: 430px;
@@ -649,7 +649,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CONTACT DETAILS ---------- */
+/* CONTACT DETAILS */
 
 .contact-details {
   display: flex;
@@ -727,7 +727,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SOCIAL ---------- */
+/* SOCIAL */
 
 .contact-social {
   margin-top: 42px;
@@ -771,7 +771,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CONTACT CARD ---------- */
+/* CONTACT CARD */
 
 .contact-card {
   position: relative;
@@ -849,7 +849,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- FORM HEADER ---------- */
+/* FORM HEADER */
 
 .contact-card-top {
   position: relative;
@@ -883,7 +883,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- FORM ---------- */
+/* FORM */
 
 .contact-form {
   position: relative;
@@ -993,7 +993,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SUBMIT ---------- */
+/* SUBMIT */
 
 .contact-submit {
   margin-top: 4px;
@@ -1072,7 +1072,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SUCCESS STATE ---------- */
+/* SUCCESS STATE */
 
 .contact-success {
   position: relative;
@@ -1202,7 +1202,7 @@ main>section{padding:150px 7vw 100px}
   color: #fff;
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 .site-foot {
   position: relative;
@@ -1228,7 +1228,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- MAIN FOOTER ---------- */
+/* MAIN FOOTER */
 
 .footer-main {
   width: min(1200px, 100%);
@@ -1243,7 +1243,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- BRAND ---------- */
+/* BRAND */
 
 .footer-brand {
   display: flex;
@@ -1277,7 +1277,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SOCIAL AREA ---------- */
+/* SOCIAL AREA */
 
 .footer-social {
   display: flex;
@@ -1300,7 +1300,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SOCIAL BUTTON ROW ---------- */
+/* SOCIAL BUTTON ROW */
 
 .social-buttons {
   display: flex;
@@ -1310,7 +1310,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SOCIAL BUTTON ---------- */
+/* SOCIAL BUTTON */
 
 .social-button {
   position: relative;
@@ -1423,7 +1423,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Red */
+/* Light1 */
 
 .social-red {
   background:
@@ -1447,7 +1447,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Green */
+/* Light2 */
 
 .social-green {
   background:
@@ -1471,7 +1471,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Blue */
+/* Light3 */
 
 .social-blue {
   width: 4.25em;
@@ -1498,7 +1498,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* Yellow */
+/* Light4 */
 
 .social-yellow {
   background:
@@ -1522,7 +1522,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ICONS ---------- */
+/* ICONS */
 
 .social-icon {
   position: absolute;
@@ -1604,7 +1604,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- HOVER ---------- */
+/* HOVER */
 
 .social-button:hover {
   transform:
@@ -1631,7 +1631,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- FOOTER BOTTOM ---------- */
+/* FOOTER BOTTOM */
 
 .footer-bottom {
   width: min(1200px, 100%);
@@ -1651,7 +1651,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 
 @media (max-width: 650px) {
@@ -1728,7 +1728,7 @@ main>section{padding:150px 7vw 100px}
 
 
 
-/* ---------- RESPONSIVE ---------- */
+/* RESPONSIVE */
 
 @media(max-width:960px){
   .site-head{
@@ -1773,7 +1773,7 @@ main>section{padding:150px 7vw 100px}
 
 
 
-/* ---------- FAQ CRATE SECTION ---------- */
+/* FAQ CRATE SECTION */
 
 
 .faq-section {
@@ -1790,7 +1790,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CRATE STAGE ---------- */
+/* CRATE STAGE */
 
 .faq-sticky {
   position: relative;
@@ -1807,7 +1807,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CRATE ---------- */
+/* CRATE */
 
 .crate {
   position: relative;
@@ -1819,7 +1819,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- RECORD SLEEVES ---------- */
+/* RECORD SLEEVES */
 
 .record-sleeve {
   position: absolute;
@@ -1851,9 +1851,7 @@ main>section{padding:150px 7vw 100px}
     box-shadow 0.25s ease;
 }
 
-/*
-  Hover
-*/
+/* Hover */
 .record-sleeve:hover {
   transform: translateY(calc(var(--rest) - 18px));
   filter: brightness(1.06);
@@ -1864,9 +1862,7 @@ main>section{padding:150px 7vw 100px}
   transform: translateY(calc(var(--rest) - 8px));
 }
 
-/*
-  Active/open
-*/
+/* Active/open */
 .record-sleeve.is-active,
 .record-sleeve.is-active:hover {
   transform: translateY(0px) scale(1.05);
@@ -1880,7 +1876,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- SLEEVE COLORS + RESTING STACK ---------- */
+/* SLEEVE COLORS + RESTING STACK */
 
 .sleeve-1 {
   background: url("/images/records/expectations.jpg") center / cover;
@@ -1928,7 +1924,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ----------  SLEEVE CONTENT ---------- */
+/*  SLEEVE CONTENT */
 
 .sleeve-content {
   position: relative;
@@ -1948,7 +1944,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ----------  SLEEVE TEXT ---------- */
+/*  SLEEVE TEXT */
 
 .sleeve-number {
   position: relative;
@@ -1994,7 +1990,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CRATE FRONT ---------- */
+/* CRATE FRONT */
 
 .crate-front {
   position: absolute;
@@ -2041,7 +2037,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- WOOD GRAIN ---------- */
+/* WOOD GRAIN */
 
 .crate-front::before {
   content: "";
@@ -2065,7 +2061,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CRATE LABEL ---------- */
+/* CRATE LABEL */
 
 .crate-label {
   position: relative;
@@ -2098,7 +2094,7 @@ main>section{padding:150px 7vw 100px}
   letter-spacing: 5px;
 }
 
-/* ---------- FAQ ANSWER — GLASS POPUP ---------- */
+/* FAQ ANSWER — GLASS POPUP */
 
 .faq-answer {
   position: relative;
@@ -2158,7 +2154,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ----------  GLASS SHINE / DISTORTION ---------- */
+/*  GLASS SHINE / DISTORTION */
 
 .faq-answer::before {
   content: "";
@@ -2193,7 +2189,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- OPEN STATE ---------- */
+/* OPEN STATE */
 
 .faq-answer.active {
   max-height: 600px;
@@ -2230,7 +2226,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ANSWER NUMBER ---------- */
+/* ANSWER NUMBER */
 
 .answer-number {
   position: relative;
@@ -2253,7 +2249,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ANSWER CONTENT ---------- */
+/* ANSWER CONTENT */
 
 .answer-content {
   position: relative;
@@ -2264,7 +2260,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ANSWER TITLE ---------- */
+/* ANSWER TITLE */
 
 .answer-content h3 {
   margin: 0 0 12px;
@@ -2290,7 +2286,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- ANSWER PARAGRAPH ---------- */
+/* ANSWER PARAGRAPH */
 
 .answer-content p {
   margin: 0;
@@ -2307,7 +2303,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- CLOSE BUTTON ---------- */
+/* CLOSE BUTTON */
 
 .answer-next {
   position: absolute;
@@ -2398,7 +2394,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- FALLBACK ---------- */
+/* FALLBACK */
 
 @supports not (backdrop-filter: blur(1px)) {
 
@@ -2409,7 +2405,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -2442,7 +2438,7 @@ main>section{padding:150px 7vw 100px}
 }
 
 
-/* ---------- REDUCED MOTION ---------- */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -2456,7 +2452,7 @@ main>section{padding:150px 7vw 100px}
 
 }
 
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -2496,7 +2492,7 @@ main>section{padding:150px 7vw 100px}
 
 }
 
-/* ---------- SPEAKER ---------- */
+/* SPEAKER */
 
 .speaker{
   border: 2px solid #0000;
@@ -2796,4 +2792,16 @@ main>section{padding:150px 7vw 100px}
 
 @media (max-width:560px){
   .review{padding:90px 6vw 76px}
+}
+
+/* VIDEO */
+main > section.video{padding:30px 7vw 90px}
+.video-wrap{max-width:960px;margin:0 auto}
+.video-frame{aspect-ratio:16/9;padding:0;background:#000}
+.video-frame iframe,
+.video-frame video{position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;display:block}
+.video-caption{margin-top:16px;text-align:center;color:var(--steel);font-size:14px}
+.video-caption:empty{display:none}
+@media (max-width:900px){
+  main > section.video{padding:10px 6vw 60px}
 }
