@@ -2799,10 +2799,17 @@ main > section.video{
   padding:30px 7vw 90px
 }
 .video-wrap{
-  max-width:960px;margin:0 auto
+  max-width:960px;
+  margin:0 auto
 }
-.video-caption{
-  margin-top:16px;text-align:center;color:var(--steel);font-size:14px
+.video-caption {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--steel);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 .video-caption:empty{
   display:none
