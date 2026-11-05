@@ -1,8 +1,6 @@
 import { wix, imgUrl } from './wix.js';
 
-// ---------- HELPERS ----------
-// Turns plain text OR Wix rich-text HTML (e.g. <p class="font_8">...</p>)
-// into a list of clean paragraphs.
+// HELPERS 
 function toParagraphs(value) {
   if (!value) return [];
   value = String(value);
@@ -17,10 +15,9 @@ function toParagraphs(value) {
   return parts.map(t => t.replace(/\u00a0/g, ' ').trim()).filter(Boolean);
 }
 
-// One clean line of text (used for names, roles, quotes)
 const plain = value => toParagraphs(value).join(' ');
 
-// ---------- SERVICES TABS ----------
+// SERVICES TABS 
 const serviceTabs = document.querySelectorAll('.service-tab');
 const servicePanels = document.querySelectorAll('.service-panel');
 serviceTabs.forEach(tab => {
@@ -33,8 +30,7 @@ serviceTabs.forEach(tab => {
   });
 });
 
-// ---------- TESTIMONIALS CAROUSEL ----------
-// This list is the fallback. If the Wix "Testimonials" collection has items, they replace it.
+// TESTIMONIALS CAROUSEL - fallback list
 let testimonials = [
   { quote: "All Around Sound of Monroe County is absolutely fantastic! DJ Stu is incredibly professional, responsive, and accommodating, and his prices are very competitive. We had the pleasure of working with his new DJ, Sam, who was excellent and played all the hits that kept everyone on the dance floor.", name: "Adam Connors" },
   { quote: "DJ Sam at All Around Sound was the perfect choice for our Back to School night. He kept the kids engaged and having fun with dance parties, contests, and so much more. It was also very easy to work with DJ Stu to schedule the event and keep in touch on the details.", name: "Krissy Jones" },
@@ -69,7 +65,7 @@ if (quoteText && quoteName && quoteCount && quotePrev && quoteNext) {
 }
 
 async function loadTestimonials() {
-  if (!quoteText) return; // not the page with the carousel
+  if (!quoteText) return; 
   try {
     const { items: rows } = await wix.items.query('Testimonials')
       .eq('visible', true).ascending('order').limit(100).find();
@@ -83,7 +79,7 @@ async function loadTestimonials() {
 }
 loadTestimonials();
 
-// ---------- TEAM (from Wix CMS) ----------
+// TEAM 
 const teamGrid = document.querySelector('.team-grid');
 
 function buildTeamCard(m) {
@@ -136,7 +132,7 @@ async function loadTeam() {
   try {
     const { items: rows } = await wix.items.query('Team')
       .eq('visible', true).ascending('order').limit(50).find();
-    if (!rows.length) return;               // keep the hardcoded cards as a fallback
+    if (!rows.length) return;               
     teamGrid.replaceChildren(...rows.map(buildTeamCard));
   } catch (err) {
     console.error('Could not load team:', err);
@@ -144,7 +140,7 @@ async function loadTeam() {
 }
 loadTeam();
 
-// ---------- MOBILE NAV ----------
+// MOBILE NAV
 const navToggle = document.querySelector('.nav-toggle');
 const mainNav = document.querySelector('.main-nav');
 navToggle?.addEventListener('click', () => {
@@ -153,7 +149,7 @@ navToggle?.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', String(!open));
 });
 
-// ---------- CONTACT FORM ----------
+// CONTACT FORM 
 
 const contactForm = document.getElementById('contact-form');
 const contactFormState = document.getElementById('contact-form-state');
@@ -163,7 +159,6 @@ const contactReset = document.getElementById('contact-reset');
 contactForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  // Prevent double submissions
   const submitButton = contactForm.querySelector('.contact-submit');
   submitButton.disabled = true;
 
@@ -196,7 +191,7 @@ contactForm?.addEventListener('submit', async (event) => {
 });
 
 
-// ---------- SEND ANOTHER REQUEST ----------
+// SEND ANOTHER REQUEST
 
 contactReset?.addEventListener('click', () => {
   const btn = contactForm.querySelector('.contact-submit');
@@ -228,8 +223,7 @@ contactReset?.addEventListener('click', () => {
 });
 
 
-// ---------- LEAVE A REVIEW ----------
-// Name and review are both mandatory.
+// LEAVE A REVIEW
 
 const reviewForm = document.getElementById('review-form');
 const reviewFormState = document.getElementById('review-form-state');
@@ -257,7 +251,6 @@ reviewForm?.addEventListener('input', clearReviewError);
 reviewForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  // trim first so a name or review of only spaces doesn't count
   const name = reviewName.value.trim();
   const review = reviewText.value.trim();
 
@@ -312,7 +305,7 @@ reviewReset?.addEventListener('click', () => {
 });
 
 
-// ---------- FAQ RECORDS ----------
+// FAQ RECORDS
 
 const records = [...document.querySelectorAll(".record-sleeve")];
 
@@ -384,9 +377,7 @@ if (answerBox && records.length) {
     faqSection.classList.add("has-answer");
   };
 
-  /* =========================================
-  RECORDS
-  ========================================= */
+  /* RECORDS */
 
   records.forEach((record, index) => {
 
@@ -403,9 +394,7 @@ if (answerBox && records.length) {
   });
 
 
-  /* =========================================
-     CLICK RECORD → SHOW ANSWER
-  ========================================= */
+  /* CLICK RECORD → SHOW ANSWER */
 
   records.forEach((record) => {
 
@@ -431,9 +420,7 @@ if (answerBox && records.length) {
   });
 
 
-  /* =========================================
-     CLOSE ANSWER
-  ========================================= */
+  /* CLOSE ANSWER */
 
   closeButton?.addEventListener("click", () => {
 
@@ -448,9 +435,7 @@ if (answerBox && records.length) {
   });
 
 
-  /* =========================================
-     CLOSE WHEN CLICKING OUTSIDE
-  ========================================= */
+  /* CLOSE WHEN CLICKING OUTSIDE */
 
   document.addEventListener("click", (event) => {
 
@@ -472,3 +457,6 @@ if (answerBox && records.length) {
   });
 
 }
+
+const VIDEO_COLLECTION = 'HomeVideo';
+const VIDEO_FIELDS = { url: 'videoUrl', caption: 'caption', order: 'order', visible: 'visible' };
