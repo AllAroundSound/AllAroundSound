@@ -1,4 +1,4 @@
-// ---------- SERVICES TABS ----------
+// SERVICES TABS
 const serviceTabs = document.querySelectorAll('.service-tab');
 const servicePanels = document.querySelectorAll('.service-panel');
 serviceTabs.forEach(tab => {
@@ -11,7 +11,7 @@ serviceTabs.forEach(tab => {
   });
 });
 
-// ---------- EVENT TYPE KNOB ----------
+// EVENT TYPE KNOB
 const eventRadios = [...document.querySelectorAll('.clock-input input[type="radio"]')];
 const dialEl = document.querySelector('.clock-input .dial');
 const eventValue = document.getElementById('event-value');
@@ -20,7 +20,7 @@ if (eventRadios.length && dialEl && eventValue) {
   const count = eventRadios.length;
   const step = 360 / count;
   let current = Math.max(0, eventRadios.findIndex(r => r.checked));
-  let angle = current * step; // cumulative, so the knob never spins backwards
+  let angle = current * step; 
   let fadeTimer;
 
   dialEl.style.setProperty('--angle', `${angle}deg`);
@@ -48,7 +48,7 @@ if (eventRadios.length && dialEl && eventValue) {
   });
 }
 
-// ---------- BUILD YOUR EVENT ----------
+// BUILD YOUR EVENT
 const hoursRange = document.getElementById('hours-range');
 const hoursValue = document.getElementById('hours-value');
 const toggles = document.querySelectorAll('.toggle-switch');
@@ -137,7 +137,7 @@ if (spinBtn && hoursRange && quoteReel && quoteMachine) {
     a.hours = Math.min(Math.max(a.hours, MIN_HOURS), total);
 
     a.slider.max = String(total);
-    a.slider.parentElement.style.setProperty('--steps', Math.max(1, total - MIN_HOURS)); // tick marks: one per hour
+    a.slider.parentElement.style.setProperty('--steps', Math.max(1, total - MIN_HOURS));
     a.slider.value = String(a.hours);
     a.readout.textContent = a.hours;
 
@@ -175,7 +175,7 @@ if (spinBtn && hoursRange && quoteReel && quoteMachine) {
 
   // Pricing model
   const PRICES = {
-    //            2h    3h    4h    5h    6h    7h    8h    9h    10h
+    //           2h    3h    4h    5h    6h    7h    8h    9h    10h
     lighting:    [150,  150,  150,  150,  150,  250,  250,  250,  250],
     photobooth:  [500,  650,  800,  900, 1000, 1100, 1200, 1400, 1600],
     karaoke:     [200,  300,  400,  500,  600,  700,  800,  900, 1000],
@@ -186,9 +186,9 @@ if (spinBtn && hoursRange && quoteReel && quoteMachine) {
   const DJ_PRICING = {
     // Weddings + Bar/Bat Mitzvahs
     premium: {
-      //      2h   3h    4h    5h    6h    7h    8h    9h    10h
+      //     2h   3h    4h    5h    6h    7h    8h    9h    10h
       prices: [800, 1000, 1200, 1400, 1600, 1800, 2000, 2400, 2600],
-      setupFee: 0, // set to 200 if the prices above do not already include set up/break down
+      setupFee: 0,
     },
     // Corporate + Parties
     standard: {
@@ -229,7 +229,7 @@ if (spinBtn && hoursRange && quoteReel && quoteMachine) {
     return `$${n.toLocaleString('en-US')}`;
   }
 
-  // Casino-style reveal
+  //  reveal
   function rollReel(finalText){
     const chars = finalText.split('');
     const stopFrame = i => 14 + i * 3;
