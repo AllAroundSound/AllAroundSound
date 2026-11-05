@@ -1920,7 +1920,6 @@ main>section{padding:150px 7vw 100px}
 
 
 @media (max-width: 700px) {
-  /* Smaller lift on small screens to match the scaled-down crate */
   .record-sleeve.is-active,
   .record-sleeve.is-active:hover {
     transform: translateY(-170px) scale(1.05);
@@ -2608,10 +2607,7 @@ main>section{padding:150px 7vw 100px}
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
-/* ==========================================================================
-   SERVICES: DJ BOARD STYLE
-   (channel buttons with LEDs, a hardware panel, an LCD title, a VU meter)
-   ========================================================================== */
+/* SERVICES */
 
 /* button rail */
 .services .service-tabs{
@@ -2671,7 +2667,7 @@ main>section{padding:150px 7vw 100px}
 .services .service-panel.is-active{animation:panelIn .35s ease}
 @keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* corner screws (re-uses the glass shine pseudo-element) */
+/* corner screws */
 .services .service-panel.glass-panel::before{
   content:"";position:absolute;inset:0;width:auto;height:auto;z-index:0;
   background:
@@ -2716,26 +2712,6 @@ main>section{padding:150px 7vw 100px}
   color:#b9c5cc;font-size:14.5px;line-height:1.7;
 }
 
-/* VU meter */
-.services .service-panel.glass-panel::after{
-  content:"";position:absolute;z-index:1;right:38px;top:36px;
-  width:40px;height:70px;
-  background:repeating-linear-gradient(to top,var(--sky) 0 5px,transparent 5px 8px);
-  -webkit-mask-image:linear-gradient(to right,#000 0 10px,transparent 10px 15px,#000 15px 25px,transparent 25px 30px,#000 30px 40px);
-          mask-image:linear-gradient(to right,#000 0 10px,transparent 10px 15px,#000 15px 25px,transparent 25px 30px,#000 30px 40px);
-  opacity:.85;
-  animation:vuMeter 1.3s steps(1,end) infinite;
-}
-@keyframes vuMeter{
-  0%{clip-path:inset(30% 0 0 0)}
-  15%{clip-path:inset(8% 0 0 0)}
-  30%{clip-path:inset(42% 0 0 0)}
-  45%{clip-path:inset(18% 0 0 0)}
-  60%{clip-path:inset(55% 0 0 0)}
-  75%{clip-path:inset(25% 0 0 0)}
-  90%{clip-path:inset(12% 0 0 0)}
-}
-
 @media (prefers-reduced-motion:reduce){
   .services .service-panel.glass-panel::after{animation:none;clip-path:inset(35% 0 0 0)}
   .services .service-panel.is-active{animation:none}
@@ -2753,9 +2729,7 @@ main>section{padding:150px 7vw 100px}
   .services .service-panel.glass-panel::after{display:none}
 }
 
-/* ==========================================================================
-   LEAVE A REVIEW
-   ========================================================================== */
+/* LEAVE A REVIEW */
 
 .review{
   position:relative;
@@ -2791,7 +2765,7 @@ main>section{padding:150px 7vw 100px}
   line-height:1.6;
 }
 
-/* dark card, reusing the contact form styling */
+/* card */
 .review .review-card{
   min-height:0;
   background:
