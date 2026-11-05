@@ -458,5 +458,5 @@ if (answerBox && records.length) {
 
 }
 
-const VIDEO_COLLECTION = 'Video (EDITABLE)';
+const VIDEO_COLLECTION = 'HomeVideo';
 const VIDEO_FIELDS = { url: 'videoUrl', caption: 'caption', order: 'order', visible: 'visible' };
