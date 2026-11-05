@@ -458,5 +458,140 @@ if (answerBox && records.length) {
 
 }
 
+// ---------- HOME VIDEO ----------
+
 const VIDEO_COLLECTION = 'HomeVideo';
 const VIDEO_FIELDS = { url: 'videoUrl', caption: 'caption', order: 'order', visible: 'visible' };
+
+function getYouTubeId(url) {
+  try {
+    const parsed = new URL(url);
+
+    if (parsed.hostname.includes("youtu.be")) {
+      return parsed.pathname.slice(1);
+    }
+
+    if (parsed.pathname === "/watch") {
+      return parsed.searchParams.get("v");
+    }
+
+    if (
+      parsed.pathname.startsWith("/embed/") ||
+      parsed.pathname.startsWith("/shorts/")
+    ) {
+      return parsed.pathname.split("/")[2];
+    }
+
+  } catch (error) {
+    console.error("Invalid YouTube URL:", error);
+  }
+
+  return null;
+}
+
+function buildVideo(url) {
+  const parsed = new URL(url);
+
+  // YOUTUBE
+  if (
+    parsed.hostname.includes("youtube.com") ||
+    parsed.hostname.includes("youtu.be")
+  ) {
+    const videoId = getYouTubeId(url);
+
+    if (!videoId) {
+      throw new Error("Could not identify YouTube video.");
+    }
+
+    const iframe = document.createElement("iframe");
+
+    iframe.src =
+      `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
+
+    iframe.title = "All Around Sound video";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+
+    return iframe;
+  }
+
+  // VIMEO
+  if (parsed.hostname.includes("vimeo.com")) {
+    const match = parsed.pathname.match(/\/(?:video\/)?(\d+)/);
+
+    if (!match) {
+      throw new Error("Could not identify Vimeo video.");
+    }
+
+    const iframe = document.createElement("iframe");
+
+    iframe.src = `https://player.vimeo.com/video/${match[1]}`;
+    iframe.title = "All Around Sound video";
+    iframe.allow = "autoplay; fullscreen; picture-in-picture";
+    iframe.allowFullscreen = true;
+
+    return iframe;
+  }
+
+  // DIRECT MP4
+  if (parsed.pathname.toLowerCase().endsWith(".mp4")) {
+    const video = document.createElement("video");
+
+    video.src = url;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+
+    return video;
+  }
+
+  throw new Error("Unsupported video URL format.");
+}
+
+async function loadHomeVideo() {
+  const frame = document.getElementById("video-frame");
+  const caption = document.getElementById("video-caption");
+
+  if (!frame) {
+    console.warn("Video frame #video-frame was not found.");
+    return;
+  }
+
+  try {
+    const { items: videos } = await wix.items
+      .query(VIDEO_COLLECTION)
+      .eq(VIDEO_FIELDS.visible, true)
+      .ascending(VIDEO_FIELDS.order)
+      .limit(1)
+      .find();
+
+    if (!videos.length) {
+      console.warn("No visible videos found in HomeVideo.");
+      return;
+    }
+
+    const video = videos[0];
+    const videoUrl = video[VIDEO_FIELDS.url];
+
+    if (!videoUrl) {
+      throw new Error("The videoUrl field is empty.");
+    }
+
+    const videoElement = buildVideo(videoUrl);
+
+    frame.replaceChildren(videoElement);
+
+    if (caption) {
+      caption.textContent = video[VIDEO_FIELDS.caption] || "";
+    }
+
+    console.log("Home video loaded successfully.");
+
+  } catch (error) {
+    console.error("Could not load HomeVideo from Wix CMS:", error);
+  }
+}
+
+loadHomeVideo();
+
