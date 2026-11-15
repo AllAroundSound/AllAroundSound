@@ -110,6 +110,7 @@ main>section{padding:150px 7vw 100px}
 }
 .kicker{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--steel)}
 .hero h1{font-size:clamp(46px,6vw,78px);font-weight:800;margin-top:18px}
+.hero h2{margin-top:12px;font-size:clamp(28px,3.2vw,40px);font-weight:700;color:var(--deep-a)}
 .lede{margin-top:24px;max-width:460px;color:var(--steel);font-size:16px;line-height:1.55}
 .hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;padding:15px 26px;border-radius:999px;font-size:13px;font-weight:700;border:0}
