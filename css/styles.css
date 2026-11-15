@@ -234,7 +234,7 @@ main>section{padding:150px 7vw 100px}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .team-card{padding:26px}
 .team-photo{
-  width:100%;aspect-ratio:1;border-radius:180px;margin-bottom:18px;
+  width:100%;aspect-ratio:1;border-radius:280px;margin-bottom:18px;
   background:linear-gradient(155deg,var(--frost),var(--sky));
 }
 .team-card h3{font-size:19px;font-weight:800}
