@@ -14,7 +14,7 @@
 
 <header class="site-head">
   <a class="brand" href="#home"><img src="images/logo/logo-white.jpeg" style="width: 100px;"></a>
-  <nav class="main-nav">
+  <nav class="main-nav" id="main-nav">
     <a href="#about" class="nav-temp">About</a>
     <a href="#services">Services</a>
     <a href="buildyourevent.html">Build Your Event</a>
@@ -25,7 +25,7 @@
     <a href="#faq">FAQ</a>
   </nav>
   <a class="cta" href="#contact">Get a quote</a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">☰</button>
 </header>
 
 <main>
@@ -756,5 +756,6 @@
 </footer>
 
 <script type="module" src="js/script.js"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>
