@@ -585,3 +585,25 @@ async function loadHomeVideo() {
 }
 
 loadHomeVideo();
+
+// ---------- ABOUT IMAGE (from Wix CMS) ----------
+const ABOUT_COLLECTION = 'AboutImage';
+const ABOUT_FIELDS = { image: 'image', order: 'order', visible: 'visible' };
+
+async function loadAboutImage() {
+  const img = document.querySelector('.about-image');
+  if (!img) return;                          // not the page with the About section
+  try {
+    const { items: rows } = await wix.items.query(ABOUT_COLLECTION)
+      .eq(ABOUT_FIELDS.visible, true).ascending(ABOUT_FIELDS.order).limit(1).find();
+    const row = rows[0];
+    if (!row || !row[ABOUT_FIELDS.image]) return;   // keep the photo from the HTML as a fallback
+    const url = imgUrl(row[ABOUT_FIELDS.image], 1200, 1200);
+    const preload = new Image();
+    preload.onload = () => { img.src = url; };       // swap only once the new photo is ready
+    preload.src = url;
+  } catch (err) {
+    console.error('Could not load About image:', err);
+  }
+}
+loadAboutImage();
